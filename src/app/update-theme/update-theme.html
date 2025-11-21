@@ -1,0 +1,44 @@
+<div class="container mt-4">
+  <div class="card shadow mb-4">
+    <div class="card-header bg-primary text-white">
+      <h4 class="mb-0">{{ajout ? 'Ajouter' : 'Modifier'}} un Thème</h4>
+    </div>
+
+    <div class="card-body">
+      <form>
+
+        <div class="mb-3 w-50">
+          <label class="form-label">ID Thème</label>
+          <input 
+            type="text" 
+            [(ngModel)]="theme.idThe" 
+            name="idTheme" 
+            class="form-control" 
+            placeholder="Entrez l'ID du thème">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Nom Thème</label>
+          <input 
+            type="text" 
+            [(ngModel)]="theme.nomThe" 
+            name="nomTheme" 
+            class="form-control" 
+            placeholder="Entrez un nom de thème..." 
+            required>
+        </div>
+
+        <div class="text-end">
+          <button 
+            type="submit" 
+            class="btn btn-success px-4" 
+            (click)="saveTheme()" 
+            [disabled]="!theme.nomThe">
+            {{ajout ? 'Ajouter' : 'Modifier'}}
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

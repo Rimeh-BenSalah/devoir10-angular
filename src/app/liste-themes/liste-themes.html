@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <app-update-theme
+            [theme]="updatedTheme"
+            (themeUpdated)="themeUpdated($event)"
+            [ajout]="ajout">
+    </app-update-theme>
+  </div>
+
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id Thème</th>
+            <th>Nom Thème</th>
+          </tr>
+        </thead>
+
+        @for(theme of themes; track theme.idThe) {
+        <tbody>
+          <tr>
+            <td>{{theme.idThe}}</td>
+            <td>{{theme.nomThe}}</td>
+            <td>
+              <a class="btn btn-success" (click)="updateTheme(theme)">
+                Éditer
+              </a>
+            </td>
+          </tr>
+        </tbody>
+        }
+      </table>
+    </div>
+  </div>
+</div>
